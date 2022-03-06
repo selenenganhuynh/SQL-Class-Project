@@ -1,0 +1,549 @@
+SQL> START C:\OSQL\PARTBSQLINPUT3.TXT
+SQL> /* PROBLEM NO D */
+SQL> SELECT	     COURSE_DESCRIPTION, COURSE_FEE
+  2  FROM	     COURSE
+  3  WHERE	     COURSE_NUM > 1001;
+
+COURSE_DESCRIPTION                                 COURSE_FEE                   
+-------------------------------------------------- ----------                   
+ACCOUNTING                                                300                   
+BUSINESS FINANCE                                          300                   
+CALCULUS                                                  300                   
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     SESSION_NUM, COURSE_NUM
+  2  FROM	     SESSIONS
+  3  WHERE	     SESSION_NUM = 1235;
+
+SESSION_NUM COURSE_NUM                                                          
+----------- ----------                                                          
+       1235      10020                                                          
+
+1 row selected.
+
+SQL> 
+SQL> SELECT	     SESSION_NUM, ENROLL_FEEPAID
+  2  FROM	     ENROLL
+  3  WHERE	     SESSION_NUM = 1234;
+
+SESSION_NUM ENROLL_FEEPAID                                                      
+----------- --------------                                                      
+       1234            500                                                      
+
+1 row selected.
+
+SQL> 
+SQL> SELECT	     COMP_NAME
+  2  FROM	     COMPANY
+  3  WHERE	     COMP_CODE < 103;
+
+COMP_NAME                                                                       
+--------------------------------------------------                              
+EY                                                                              
+PwC                                                                             
+
+2 rows selected.
+
+SQL> 
+SQL> SELECT	     OPENING_DESCRIPTION, OPENING_AVAILABLE
+  2  FROM	     OPENING
+  3  WHERE	     OPENING_NUM <= 1222;
+
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE                                                               
+-----------------                                                               
+Software Engineer                                                               
+                6                                                               
+                                                                                
+Entry-level Consultant                                                          
+                8                                                               
+                                                                                
+
+2 rows selected.
+
+SQL> 
+SQL> SELECT	     CAND_LNAME
+  2  FROM	     CANDIDATE
+  3  WHERE	     CAND_NUM < 4;
+
+CAND_LNAME                                                                      
+--------------------                                                            
+Swift                                                                           
+Sheldon                                                                         
+Cooper                                                                          
+
+3 rows selected.
+
+SQL> 
+SQL> /* PROBLEM NO E */
+SQL> SELECT	     DISTINCT COURSE_NUM, COURSE_FEE
+  2  FROM	     COURSE
+  3  GROUP BY	     COURSE_NUM, COURSE_FEE
+  4  ORDER BY	     COURSE_FEE;
+
+COURSE_NUM COURSE_FEE                                                           
+---------- ----------                                                           
+     10010        300                                                           
+     10020        300                                                           
+     10030        300                                                           
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     DISTINCT SESSION_NUM, COURSE_NUM
+  2  FROM	     SESSIONS
+  3  GROUP BY	     SESSION_NUM, COURSE_NUM
+  4  ORDER BY	     SESSION_NUM;
+
+SESSION_NUM COURSE_NUM                                                          
+----------- ----------                                                          
+       1234      10010                                                          
+       1235      10020                                                          
+       1236      10030                                                          
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     OPENING_NUM, COMP_CODE, OPENING_DESCRIPTION
+  2  FROM	     OPENING
+  3  GROUP BY	     OPENING_NUM, COMP_CODE, OPENING_DESCRIPTION
+  4  ORDER BY	     OPENING_NUM;
+
+OPENING_NUM  COMP_CODE                                                          
+----------- ----------                                                          
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+       1221        101                                                          
+Software Engineer                                                               
+                                                                                
+       1222        102                                                          
+Entry-level Consultant                                                          
+                                                                                
+       1223        103                                                          
+Front-end Developer                                                             
+                                                                                
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     CAND_LNAME
+  2  FROM	     CANDIDATE
+  3  GROUP BY	     CAND_NUM, CAND_LNAME
+  4  ORDER BY	     CAND_NUM;
+
+CAND_LNAME                                                                      
+--------------------                                                            
+Swift                                                                           
+Sheldon                                                                         
+Cooper                                                                          
+
+3 rows selected.
+
+SQL> 
+SQL> /* PROBLEM NO F */
+SQL> SELECT	     DISTINCT COURSE_NUM, COURSE_FEE
+  2  FROM	     COURSE
+  3  GROUP BY	     COURSE_NUM, COURSE_FEE
+  4  HAVING	     COURSE_FEE > 150
+  5  ORDER BY	     COURSE_NUM;
+
+COURSE_NUM COURSE_FEE                                                           
+---------- ----------                                                           
+     10010        300                                                           
+     10020        300                                                           
+     10030        300                                                           
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     DISTINCT SESSION_NUM, COURSE_NUM
+  2  FROM	     SESSIONS
+  3  GROUP BY	     SESSION_NUM, COURSE_NUM
+  4  HAVING	     SESSION_NUM>1236
+  5  ORDER BY	     COURSE_NUM;
+
+no rows selected
+
+SQL> 
+SQL> SELECT	     OPENING_NUM, COMP_CODE, OPENING_DESCRIPTION
+  2  FROM	     OPENING
+  3  GROUP BY	     OPENING_NUM, COMP_CODE, OPENING_DESCRIPTION
+  4  HAVING	     OPENING_NUM < 1223
+  5  ORDER BY	     OPENING_NUM;
+
+OPENING_NUM  COMP_CODE                                                          
+----------- ----------                                                          
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+       1221        101                                                          
+Software Engineer                                                               
+                                                                                
+       1222        102                                                          
+Entry-level Consultant                                                          
+                                                                                
+
+2 rows selected.
+
+SQL> 
+SQL> SELECT	     CAND_LNAME
+  2  FROM	     CANDIDATE
+  3  GROUP BY	     CAND_NUM, CAND_LNAME
+  4  HAVING	     CAND_NUM < 3
+  5  ORDER BY	     CAND_NUM;
+
+CAND_LNAME                                                                      
+--------------------                                                            
+Swift                                                                           
+Sheldon                                                                         
+
+2 rows selected.
+
+SQL> 
+SQL> 
+SQL> /* PROBLEM NO G */
+SQL> SELECT	     *
+  2  FROM	     COURSE NATURAL JOIN QUALIFICATION
+  3  ORDER BY	     QUAL_CODE;
+
+ QUAL_CODE COURSE_NUM COURSE_DESCRIPTION                                        
+---------- ---------- --------------------------------------------------        
+COURSE_FEE QUAL_DESCRIPTION                                                     
+---------- --------------------------------------------------                   
+      1001      10010 ACCOUNTING                                                
+       300 ACCOUNTING                                                           
+                                                                                
+      1002      10020 BUSINESS FINANCE                                          
+       300 FINANCE                                                              
+                                                                                
+      1003      10030 CALCULUS                                                  
+       300 CALCULUS                                                             
+                                                                                
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     *
+  2  FROM	     SESSIONS NATURAL JOIN ENROLL
+  3  ORDER BY	     SESSION_NUM;
+
+SESSION_NUM SESSION_S SESSION_FEE COURSE_NUM   CAND_NUM ENROLL_DA ENROLL_FEEPAID
+----------- --------- ----------- ---------- ---------- --------- --------------
+       1234 18-JAN-21        2354      10010          1 15-AUG-20            500
+       1235 19-JAN-21        2354      10020          2 15-AUG-20            500
+       1236 18-JAN-21        2354      10030          3 03-JAN-21            500
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     COMPANY.COMP_NAME, OPENING.OPENING_DESCRIPTION, OPENING.OPENING_AVAILABLE
+  2  FROM	     COMPANY JOIN OPENING
+  3  ON 	     COMPANY.COMP_CODE = OPENING.COMP_CODE;
+
+COMP_NAME                                                                       
+--------------------------------------------------                              
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE                                                               
+-----------------                                                               
+EY                                                                              
+Software Engineer                                                               
+                6                                                               
+                                                                                
+PwC                                                                             
+Entry-level Consultant                                                          
+                8                                                               
+
+COMP_NAME                                                                       
+--------------------------------------------------                              
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE                                                               
+-----------------                                                               
+                                                                                
+Google                                                                          
+Front-end Developer                                                             
+                3                                                               
+                                                                                
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     JOBHISTORY.JH_ID, CANDIDATE.CAND_NUM
+  2  FROM	     JOBHISTORY INNER JOIN CANDIDATE
+  3  ON 	     CANDIDATE.CAND_NUM = JOBHISTORY.CAND_NUM;
+
+     JH_ID   CAND_NUM                                                           
+---------- ----------                                                           
+      1301          1                                                           
+      1302          2                                                           
+      1309          3                                                           
+
+3 rows selected.
+
+SQL> 
+SQL> 
+SQL> /* PROBLEM NO H */
+SQL> SELECT	     COURSE.COURSE_NUM, COURSE.COURSE_DESCRIPTION, QUALIFICATION.QUAL_DESCRIPTION
+  2  FROM	     COURSE LEFT JOIN QUALIFICATION
+  3  ON 	     COURSE.QUAL_CODE = QUALIFICATION.QUAL_CODE;
+
+COURSE_NUM COURSE_DESCRIPTION                                                   
+---------- --------------------------------------------------                   
+QUAL_DESCRIPTION                                                                
+--------------------------------------------------                              
+     10010 ACCOUNTING                                                           
+ACCOUNTING                                                                      
+                                                                                
+     10020 BUSINESS FINANCE                                                     
+FINANCE                                                                         
+                                                                                
+     10030 CALCULUS                                                             
+CALCULUS                                                                        
+                                                                                
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     SESSIONS.SESSION_NUM,SESSIONS.SESSION_FEE,ENROLL.CAND_NUM
+  2  FROM	     SESSIONS LEFT JOIN ENROLL
+  3  ON 	     SESSIONS.SESSION_NUM=ENROLL.SESSION_NUM;
+
+SESSION_NUM SESSION_FEE   CAND_NUM                                              
+----------- ----------- ----------                                              
+       1234        2354          1                                              
+       1235        2354          2                                              
+       1236        2354          3                                              
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     JOBHISTORY.JH_ID, CANDIDATE.CAND_NUM
+  2  FROM	     JOBHISTORY LEFT JOIN CANDIDATE
+  3  ON 	     CANDIDATE.CAND_NUM = JOBHISTORY.CAND_NUM
+  4  WHERE	     CANDIDATE.CAND_NUM < 3;
+
+     JH_ID   CAND_NUM                                                           
+---------- ----------                                                           
+      1301          1                                                           
+      1302          2                                                           
+
+2 rows selected.
+
+SQL> 
+SQL> SELECT	     COMPANY.COMP_NAME, OPENING.OPENING_DESCRIPTION, OPENING.OPENING_AVAILABLE
+  2  FROM	     COMPANY LEFT JOIN OPENING
+  3  ON 	     COMPANY.COMP_CODE = OPENING.COMP_CODE
+  4  WHERE	     COMPANY.COMP_CODE < 104;
+
+COMP_NAME                                                                       
+--------------------------------------------------                              
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE                                                               
+-----------------                                                               
+EY                                                                              
+Software Engineer                                                               
+                6                                                               
+                                                                                
+PwC                                                                             
+Entry-level Consultant                                                          
+                8                                                               
+
+COMP_NAME                                                                       
+--------------------------------------------------                              
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE                                                               
+-----------------                                                               
+                                                                                
+Google                                                                          
+Front-end Developer                                                             
+                3                                                               
+                                                                                
+
+3 rows selected.
+
+SQL> 
+SQL> /* PROBLEM NO I */
+SQL> SELECT	     COURSE_NUM, COURSE_DESCRIPTION, COURSE_FEE
+  2  FROM	     COURSE
+  3  WHERE	     EXISTS( SELECT  1
+  4  			     FROM    COURSE
+  5  			     WHERE   COURSE_FEE > 150);
+
+COURSE_NUM COURSE_DESCRIPTION                                 COURSE_FEE        
+---------- -------------------------------------------------- ----------        
+     10010 ACCOUNTING                                                300        
+     10020 BUSINESS FINANCE                                          300        
+     10030 CALCULUS                                                  300        
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     CAND_NUM
+  2  FROM	     CANDIDATE
+  3  WHERE	     CAND_NUM IN( SELECT CAND_NUM
+  4  		     FROM JOBHISTORY);
+
+  CAND_NUM                                                                      
+----------                                                                      
+         1                                                                      
+         2                                                                      
+         3                                                                      
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     OPENING_DESCRIPTION, OPENING_AVAILABLE
+  2  FROM	     OPENING
+  3  WHERE	     COMP_CODE = (SELECT MIN(COMP_CODE)
+  4  		     FROM COMPANY);
+
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE                                                               
+-----------------                                                               
+Software Engineer                                                               
+                6                                                               
+                                                                                
+
+1 row selected.
+
+SQL> 
+SQL> SELECT	     SESSION_NUM,SESSION_FEE
+  2  FROM	     SESSIONS
+  3  WHERE	     EXISTS(SELECT 1
+  4  		     FROM SESSIONS
+  5  		     WHERE SESSION_NUM < 1237);
+
+SESSION_NUM SESSION_FEE                                                         
+----------- -----------                                                         
+       1234        2354                                                         
+       1235        2354                                                         
+       1236        2354                                                         
+
+3 rows selected.
+
+SQL> 
+SQL> /* PROBLEM NO J */
+SQL> SELECT	     COURSE_NUM, COURSE_DESCRIPTION, AverageFee
+  2  FROM	     (SELECT   COURSE_NUM, COURSE_DESCRIPTION,
+  3  			       AVG(COURSE_FEE) AS AverageFee
+  4  		     FROM     COURSE
+  5  		     GROUP BY COURSE_NUM, COURSE_DESCRIPTION)
+  6  ORDER BY	     COURSE_NUM;
+
+COURSE_NUM COURSE_DESCRIPTION                                 AVERAGEFEE        
+---------- -------------------------------------------------- ----------        
+     10010 ACCOUNTING                                                300        
+     10020 BUSINESS FINANCE                                          300        
+     10030 CALCULUS                                                  300        
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     COURSE_NUM, COURSE_DESCRIPTION, AverageFee
+  2  FROM	     (SELECT   COURSE_NUM, COURSE_DESCRIPTION,
+  3  			       AVG(COURSE_FEE) AS AverageFee
+  4  		     FROM     COURSE
+  5  		     GROUP BY COURSE_NUM, COURSE_DESCRIPTION)
+  6  ORDER BY	     COURSE_NUM;
+
+COURSE_NUM COURSE_DESCRIPTION                                 AVERAGEFEE        
+---------- -------------------------------------------------- ----------        
+     10010 ACCOUNTING                                                300        
+     10020 BUSINESS FINANCE                                          300        
+     10030 CALCULUS                                                  300        
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     SESSION_NUM, SESSION_FEE,COURSE_NUM, AverageSessionFee
+  2  FROM	     (SELECT SESSION_NUM, SESSION_FEE,COURSE_NUM, Avg(SESSION_FEE) AS AverageSessionFee
+  3  		     FROM SESSIONS
+  4  		     GROUP BY COURSE_NUM,SESSION_NUM,SESSION_FEE)
+  5  ORDER BY	     SESSION_FEE;
+
+SESSION_NUM SESSION_FEE COURSE_NUM AVERAGESESSIONFEE                            
+----------- ----------- ---------- -----------------                            
+       1234        2354      10010              2354                            
+       1235        2354      10020              2354                            
+       1236        2354      10030              2354                            
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     PLACEMENT_NUM, AverageTotalHour
+  2  FROM	     (SELECT PLACEMENT_NUM, AVG(PLACEMENT_TOTALHOURS) AS AverageTotalHour
+  3  		     FROM PLACEMENT
+  4  		     GROUP BY PLACEMENT_NUM)
+  5  ORDER BY	     PLACEMENT_NUM;
+
+PLACEMENT_NUM AVERAGETOTALHOUR                                                  
+------------- ----------------                                                  
+            1               12                                                  
+            2               10                                                  
+            3                9                                                  
+
+3 rows selected.
+
+SQL> 
+SQL> /* PROBLEM NO K */
+SQL> SELECT	     COURSE_NUM,
+  2  		     COURSE_DESCRIPTION,
+  3  		     (SELECT	     AVG(COURSE_FEE)
+  4  		     FROM	     COURSE) AS AverageFee
+  5  FROM	     COURSE;
+
+COURSE_NUM COURSE_DESCRIPTION                                 AVERAGEFEE        
+---------- -------------------------------------------------- ----------        
+     10010 ACCOUNTING                                                300        
+     10020 BUSINESS FINANCE                                          300        
+     10030 CALCULUS                                                  300        
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     SESSION_NUM,SESSION_FEE,
+  2  		     (SELECT MAX(SESSION_FEE)
+  3  		     FROM   SESSIONS) AS MaxSessionFee
+  4  FROM	     SESSIONS;
+
+SESSION_NUM SESSION_FEE MAXSESSIONFEE                                           
+----------- ----------- -------------                                           
+       1234        2354          2354                                           
+       1235        2354          2354                                           
+       1236        2354          2354                                           
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     CAND_NUM,
+  2  		     (SELECT AVG(ENROLL_FEEPAID) FROM ENROLL) AS AverageFeePaid
+  3  		     FROM CANDIDATE;
+
+  CAND_NUM AVERAGEFEEPAID                                                       
+---------- --------------                                                       
+         1            500                                                       
+         2            500                                                       
+         3            500                                                       
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT	     PLACEMENT_NUM, PLACEMENT_DATE,
+  2  		     (SELECT MAX(PLACEMENT_TOTALHOURS) FROM PLACEMENT) AS MaxTotalHour
+  3  FROM	     PLACEMENT;
+
+PLACEMENT_NUM PLACEMENT MAXTOTALHOUR                                            
+------------- --------- ------------                                            
+            1 12-DEC-20           12                                            
+            2 03-DEC-20           12                                            
+            3 22-DEC-20           12                                            
+
+3 rows selected.
+
+SQL> SPOOL OFF

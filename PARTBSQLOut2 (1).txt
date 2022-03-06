@@ -1,0 +1,1070 @@
+SQL> START C:\OSQL\PARTBSQLINPUT2.TXT
+SQL> /*PROBLEM A*/
+SQL> -- CANDIDATE rows
+SQL> INSERT INTO CANDIDATE VALUES (1, 'Matt');
+
+1 row created.
+
+SQL> INSERT INTO CANDIDATE VALUES (2, 'Blake');
+
+1 row created.
+
+SQL> INSERT INTO CANDIDATE VALUES (3, 'Cooper');
+
+1 row created.
+
+SQL> INSERT INTO CANDIDATE VALUES (4, 'Nguyen');
+
+1 row created.
+
+SQL> INSERT INTO CANDIDATE VALUES (5, 'Patel');
+
+1 row created.
+
+SQL> 
+SQL> -- QUALIFICATION rows
+SQL> INSERT INTO QUALIFICATION VALUES (1001, 'ACCOUNTING');
+
+1 row created.
+
+SQL> INSERT INTO QUALIFICATION VALUES (1002, 'FINANCE');
+
+1 row created.
+
+SQL> INSERT INTO QUALIFICATION VALUES (1003, 'CALCULUS');
+
+1 row created.
+
+SQL> INSERT INTO QUALIFICATION VALUES (1004, 'JAVA');
+
+1 row created.
+
+SQL> INSERT INTO QUALIFICATION VALUES (1005, 'SQL');
+
+1 row created.
+
+SQL> 
+SQL> -- COMPANY rows
+SQL> INSERT INTO COMPANY VALUES (101, 'EY');
+
+1 row created.
+
+SQL> INSERT INTO COMPANY VALUES (102, 'PwC');
+
+1 row created.
+
+SQL> INSERT INTO COMPANY VALUES (103, 'Google Inc.');
+
+1 row created.
+
+SQL> INSERT INTO COMPANY VALUES (104, 'Amazon');
+
+1 row created.
+
+SQL> INSERT INTO COMPANY VALUES (105, 'Unilever');
+
+1 row created.
+
+SQL> 
+SQL> -- COURSE rows
+SQL> INSERT INTO COURSE VALUES (10010, 'ACCOUNTING', 300.00, 1001);
+
+1 row created.
+
+SQL> INSERT INTO COURSE VALUES (10020, 'BUSINESS FINANCE', 300.00, 1002);
+
+1 row created.
+
+SQL> INSERT INTO COURSE VALUES (10030, 'CALCULUS', 300.00, 1003);
+
+1 row created.
+
+SQL> INSERT INTO COURSE VALUES (10040, 'APPLICATION DEVELOPEMENT', 300.00, 1004);
+
+1 row created.
+
+SQL> INSERT INTO COURSE VALUES (10050, 'DATABASE', 300.00, 1005);
+
+1 row created.
+
+SQL> 
+SQL> -- SESSIONS rows
+SQL> INSERT INTO SESSIONS VALUES(1234,'18-JANUARY-2021',2354,10010);
+
+1 row created.
+
+SQL> INSERT INTO SESSIONS VALUES(1235,'19-JANUARY-2021',2354,10020);
+
+1 row created.
+
+SQL> INSERT INTO SESSIONS VALUES(1236,'18-JANUARY-2021',2354,10030);
+
+1 row created.
+
+SQL> INSERT INTO SESSIONS VALUES(1237,'20-JANUARY-2021',2354,10040);
+
+1 row created.
+
+SQL> INSERT INTO SESSIONS VALUES(1238,'15-JANUARY-2021',2354,10050);
+
+1 row created.
+
+SQL> 
+SQL> -- ENROLL rows
+SQL> INSERT INTO ENROLL VALUES(1234,1,'03-JANUARY-2021',500);
+
+1 row created.
+
+SQL> INSERT INTO ENROLL VALUES(1235,2,'08-JANUARY-2021',500);
+
+1 row created.
+
+SQL> INSERT INTO ENROLL VALUES(1236,3,'03-JANUARY-2021',500);
+
+1 row created.
+
+SQL> INSERT INTO ENROLL VALUES(1237,4,'06-JANUARY-2021',500);
+
+1 row created.
+
+SQL> INSERT INTO ENROLL VALUES(1238,5,'13-JANUARY-2021',500);
+
+1 row created.
+
+SQL> 
+SQL> -- PREREQUISTIE rows
+SQL> INSERT INTO PREREQUISITE VALUES (10010,NULL);
+
+1 row created.
+
+SQL> INSERT INTO PREREQUISITE VALUES (10020,1001);
+
+1 row created.
+
+SQL> INSERT INTO PREREQUISITE VALUES (10030,NULL);
+
+1 row created.
+
+SQL> INSERT INTO PREREQUISITE VALUES (10040,NULL);
+
+1 row created.
+
+SQL> INSERT INTO PREREQUISITE VALUES (10050,1004);
+
+1 row created.
+
+SQL> 
+SQL> -- OPENING rows
+SQL> INSERT INTO OPENING VALUES (1221, 'Software Engineer', 5, 101, 1001);
+
+1 row created.
+
+SQL> INSERT INTO OPENING VALUES (1222, 'Entry-level Consultant', 8, 102, 1002);
+
+1 row created.
+
+SQL> INSERT INTO OPENING VALUES (1223, 'Front-end Developer', 3, 103, 1003);
+
+1 row created.
+
+SQL> INSERT INTO OPENING VALUES (1224, 'Project Manager', 2, 104, 1004);
+
+1 row created.
+
+SQL> INSERT INTO OPENING VALUES (1225, 'Data Analyst', 10, 105, 1005);
+
+1 row created.
+
+SQL> 
+SQL> -- PLACEMENT rows
+SQL> INSERT INTO PLACEMENT VALUES (01, '12-DECEMBER-2020', 15, 1221, 1);
+
+1 row created.
+
+SQL> INSERT INTO PLACEMENT VALUES (02, '15-DECEMBER-2020', 10, 1222, 2);
+
+1 row created.
+
+SQL> INSERT INTO PLACEMENT VALUES (03, '22-DECEMBER-2020', 9, 1223, 3);
+
+1 row created.
+
+SQL> INSERT INTO PLACEMENT VALUES (04, '21-DECEMBER-2020', 23, 1224, 4);
+
+1 row created.
+
+SQL> INSERT INTO PLACEMENT VALUES (05, '18-DECEMBER-2020', 6, 1225, 5);
+
+1 row created.
+
+SQL> 
+SQL> -- EDUCATION rows
+SQL> INSERT INTO EDUCATION VALUES (1, 1001, '20-MAY-2020');
+
+1 row created.
+
+SQL> INSERT INTO EDUCATION VALUES (2, 1002, '25-DECEMBER-2020');
+
+1 row created.
+
+SQL> INSERT INTO EDUCATION VALUES (3, 1003, '05-MAY-2020');
+
+1 row created.
+
+SQL> INSERT INTO EDUCATION VALUES (4, 1004, '10-MAY-2019');
+
+1 row created.
+
+SQL> INSERT INTO EDUCATION VALUES (5, 1005, '20-MAY-2020');
+
+1 row created.
+
+SQL> 
+SQL> -- JOBHISTORY rows
+SQL> INSERT INTO JOBHISTORY VALUES (1307, 1);
+
+1 row created.
+
+SQL> INSERT INTO JOBHISTORY VALUES (1308, 2);
+
+1 row created.
+
+SQL> INSERT INTO JOBHISTORY VALUES (1309, 3);
+
+1 row created.
+
+SQL> INSERT INTO JOBHISTORY VALUES (1310, 4);
+
+1 row created.
+
+SQL> INSERT INTO JOBHISTORY VALUES (1311, 5);
+
+1 row created.
+
+SQL> 
+SQL> SELECT *
+  2  FROM CANDIDATE;
+
+  CAND_NUM CAND_LNAME                                                           
+---------- --------------------                                                 
+         1 Matt                                                                 
+         2 Blake                                                                
+         3 Cooper                                                               
+         4 Nguyen                                                               
+         5 Patel                                                                
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM QUALIFICATION;
+
+ QUAL_CODE QUAL_DESCRIPTION                                                     
+---------- --------------------------------------------------                   
+      1001 ACCOUNTING                                                           
+      1002 FINANCE                                                              
+      1003 CALCULUS                                                             
+      1004 JAVA                                                                 
+      1005 SQL                                                                  
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM COMPANY;
+
+ COMP_CODE COMP_NAME                                                            
+---------- --------------------------------------------------                   
+       101 EY                                                                   
+       102 PwC                                                                  
+       103 Google Inc.                                                          
+       104 Amazon                                                               
+       105 Unilever                                                             
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM COURSE;
+
+COURSE_NUM COURSE_DESCRIPTION                                 COURSE_FEE        
+---------- -------------------------------------------------- ----------        
+ QUAL_CODE                                                                      
+----------                                                                      
+     10010 ACCOUNTING                                                300        
+      1001                                                                      
+                                                                                
+     10020 BUSINESS FINANCE                                          300        
+      1002                                                                      
+                                                                                
+     10030 CALCULUS                                                  300        
+      1003                                                                      
+                                                                                
+
+COURSE_NUM COURSE_DESCRIPTION                                 COURSE_FEE        
+---------- -------------------------------------------------- ----------        
+ QUAL_CODE                                                                      
+----------                                                                      
+     10040 APPLICATION DEVELOPEMENT                                  300        
+      1004                                                                      
+                                                                                
+     10050 DATABASE                                                  300        
+      1005                                                                      
+                                                                                
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM SESSIONS;
+
+SESSION_NUM SESSION_S SESSION_FEE COURSE_NUM                                    
+----------- --------- ----------- ----------                                    
+       1234 18-JAN-21        2354      10010                                    
+       1235 19-JAN-21        2354      10020                                    
+       1236 18-JAN-21        2354      10030                                    
+       1237 20-JAN-21        2354      10040                                    
+       1238 15-JAN-21        2354      10050                                    
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM ENROLL;
+
+SESSION_NUM   CAND_NUM ENROLL_DA ENROLL_FEEPAID                                 
+----------- ---------- --------- --------------                                 
+       1234          1 03-JAN-21            500                                 
+       1235          2 08-JAN-21            500                                 
+       1236          3 03-JAN-21            500                                 
+       1237          4 06-JAN-21            500                                 
+       1238          5 13-JAN-21            500                                 
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM PREREQUISITE;
+
+COURSE_NUM  QUAL_CODE                                                           
+---------- ----------                                                           
+     10010                                                                      
+     10020       1001                                                           
+     10030                                                                      
+     10040                                                                      
+     10050       1004                                                           
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM OPENING;
+
+OPENING_NUM                                                                     
+-----------                                                                     
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE  COMP_CODE  QUAL_CODE                                         
+----------------- ---------- ----------                                         
+       1221                                                                     
+Software Engineer                                                               
+                5        101       1001                                         
+                                                                                
+       1222                                                                     
+Entry-level Consultant                                                          
+                8        102       1002                                         
+
+OPENING_NUM                                                                     
+-----------                                                                     
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE  COMP_CODE  QUAL_CODE                                         
+----------------- ---------- ----------                                         
+                                                                                
+       1223                                                                     
+Front-end Developer                                                             
+                3        103       1003                                         
+                                                                                
+       1224                                                                     
+Project Manager                                                                 
+
+OPENING_NUM                                                                     
+-----------                                                                     
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE  COMP_CODE  QUAL_CODE                                         
+----------------- ---------- ----------                                         
+                2        104       1004                                         
+                                                                                
+       1225                                                                     
+Data Analyst                                                                    
+               10        105       1005                                         
+                                                                                
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM PLACEMENT;
+
+PLACEMENT_NUM PLACEMENT PLACEMENT_TOTALHOURS OPENING_NUM   CAND_NUM             
+------------- --------- -------------------- ----------- ----------             
+            1 12-DEC-20                   15        1221          1             
+            2 15-DEC-20                   10        1222          2             
+            3 22-DEC-20                    9        1223          3             
+            4 21-DEC-20                   23        1224          4             
+            5 18-DEC-20                    6        1225          5             
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM EDUCATION;
+
+  CAND_NUM  QUAL_CODE EDUC_DATE                                                 
+---------- ---------- ---------                                                 
+         1       1001 20-MAY-20                                                 
+         2       1002 25-DEC-20                                                 
+         3       1003 05-MAY-20                                                 
+         4       1004 10-MAY-19                                                 
+         5       1005 20-MAY-20                                                 
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM JOBHISTORY;
+
+     JH_ID   CAND_NUM                                                           
+---------- ----------                                                           
+      1307          1                                                           
+      1308          2                                                           
+      1309          3                                                           
+      1310          4                                                           
+      1311          5                                                           
+
+5 rows selected.
+
+SQL> 
+SQL> /*PROBLEM B*/
+
+     JH_ID   CAND_NUM                                                           
+---------- ----------                                                           
+      1307          1                                                           
+      1308          2                                                           
+      1309          3                                                           
+      1310          4                                                           
+      1311          5                                                           
+
+5 rows selected.
+
+SQL> 
+SQL> UPDATE SESSIONS
+  2  SET SESSION_FEE = 1234
+  3  WHERE SESSION_NUM = 1237;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE SESSIONS
+  2  SET SESSION_FEE = 1500
+  3  WHERE COURSE_NUM = 10050;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE SESSIONS
+  2  SET SESSION_STARTDATE = '25-JANUARY-2021'
+  3  WHERE SESSION_NUM > 1236;
+
+2 rows updated.
+
+SQL> 
+SQL> UPDATE ENROLL
+  2  SET ENROLL_DATE = '15-AUGUST-2020'
+  3  WHERE SESSION_NUM < 1236;
+
+2 rows updated.
+
+SQL> 
+SQL> UPDATE ENROLL
+  2  SET ENROLL_FEEPAID = 835
+  3  WHERE CAND_NUM = 4;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE  QUALIFICATION
+  2  SET     QUAL_DESCRIPTION = 'DATABASE DEVELOPEMENT'
+  3  WHERE   QUAL_CODE > 1003;
+
+2 rows updated.
+
+SQL> 
+SQL> UPDATE  COURSE
+  2  SET     COURSE_DESCRIPTION = 'DATABASE DEVELOPEMENT',
+  3  	     COURSE_FEE = 150.00
+  4  WHERE   COURSE_NUM > 10030;
+
+2 rows updated.
+
+SQL> 
+SQL> UPDATE  PREREQUISITE
+  2  SET     COURSE_NUM = 10040,
+  3  	     QUAL_CODE = NULL
+  4  WHERE   COURSE_NUM > 10030;
+
+2 rows updated.
+
+SQL> 
+SQL> UPDATE EDUCATION
+  2  SET EDUC_DATE = '26-DECEMBER-2020'
+  3  WHERE QUAL_CODE = 1002;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE EDUCATION
+  2  SET EDUC_DATE = '09-MAY-2018'
+  3  WHERE QUAL_CODE = 1004;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE CANDIDATE
+  2  SET CAND_LNAME = 'Swift'
+  3  WHERE CAND_NUM = 1;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE CANDIDATE
+  2  SET CAND_LNAME = 'Sheldon'
+  3  WHERE CAND_NUM = 2;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE JOBHISTORY
+  2  set JH_ID = 1301
+  3  WHERE CAND_NUM = 1;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE JOBHISTORY
+  2  SET JH_ID = 1302
+  3  WHERE CAND_NUM = 2;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE  COMPANY
+  2  SET     COMP_NAME = 'Google'
+  3  WHERE   COMP_CODE = 103;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE  COMPANY
+  2  SET     COMP_NAME = 'Unilever Inc.'
+  3  WHERE   COMP_CODE = 105;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE OPENING
+  2  SET OPENING_AVAILABLE = 6
+  3  WHERE OPENING_NUM = 1221;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE OPENING
+  2  SET OPENING_AVAILABLE = 3
+  3  WHERE OPENING_NUM = 1225;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE PLACEMENT
+  2  SET PLACEMENT_TOTALHOURS = 12
+  3  WHERE PLACEMENT_NUM = 01;
+
+1 row updated.
+
+SQL> 
+SQL> UPDATE PLACEMENT
+  2  SET PLACEMENT_DATE = '03-DECEMBER-2020'
+  3  WHERE PLACEMENT_NUM = 02;
+
+1 row updated.
+
+SQL> 
+SQL> SELECT *
+  2  FROM CANDIDATE;
+
+  CAND_NUM CAND_LNAME                                                           
+---------- --------------------                                                 
+         1 Swift                                                                
+         2 Sheldon                                                              
+         3 Cooper                                                               
+         4 Nguyen                                                               
+         5 Patel                                                                
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM QUALIFICATION;
+
+ QUAL_CODE QUAL_DESCRIPTION                                                     
+---------- --------------------------------------------------                   
+      1001 ACCOUNTING                                                           
+      1002 FINANCE                                                              
+      1003 CALCULUS                                                             
+      1004 DATABASE DEVELOPEMENT                                                
+      1005 DATABASE DEVELOPEMENT                                                
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM COMPANY;
+
+ COMP_CODE COMP_NAME                                                            
+---------- --------------------------------------------------                   
+       101 EY                                                                   
+       102 PwC                                                                  
+       103 Google                                                               
+       104 Amazon                                                               
+       105 Unilever Inc.                                                        
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM COURSE;
+
+COURSE_NUM COURSE_DESCRIPTION                                 COURSE_FEE        
+---------- -------------------------------------------------- ----------        
+ QUAL_CODE                                                                      
+----------                                                                      
+     10010 ACCOUNTING                                                300        
+      1001                                                                      
+                                                                                
+     10020 BUSINESS FINANCE                                          300        
+      1002                                                                      
+                                                                                
+     10030 CALCULUS                                                  300        
+      1003                                                                      
+                                                                                
+
+COURSE_NUM COURSE_DESCRIPTION                                 COURSE_FEE        
+---------- -------------------------------------------------- ----------        
+ QUAL_CODE                                                                      
+----------                                                                      
+     10040 DATABASE DEVELOPEMENT                                     150        
+      1004                                                                      
+                                                                                
+     10050 DATABASE DEVELOPEMENT                                     150        
+      1005                                                                      
+                                                                                
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM SESSIONS;
+
+SESSION_NUM SESSION_S SESSION_FEE COURSE_NUM                                    
+----------- --------- ----------- ----------                                    
+       1234 18-JAN-21        2354      10010                                    
+       1235 19-JAN-21        2354      10020                                    
+       1236 18-JAN-21        2354      10030                                    
+       1237 25-JAN-21        1234      10040                                    
+       1238 25-JAN-21        1500      10050                                    
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM ENROLL;
+
+SESSION_NUM   CAND_NUM ENROLL_DA ENROLL_FEEPAID                                 
+----------- ---------- --------- --------------                                 
+       1234          1 15-AUG-20            500                                 
+       1235          2 15-AUG-20            500                                 
+       1236          3 03-JAN-21            500                                 
+       1237          4 06-JAN-21            835                                 
+       1238          5 13-JAN-21            500                                 
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM PREREQUISITE;
+
+COURSE_NUM  QUAL_CODE                                                           
+---------- ----------                                                           
+     10010                                                                      
+     10020       1001                                                           
+     10030                                                                      
+     10040                                                                      
+     10040                                                                      
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM OPENING;
+
+OPENING_NUM                                                                     
+-----------                                                                     
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE  COMP_CODE  QUAL_CODE                                         
+----------------- ---------- ----------                                         
+       1221                                                                     
+Software Engineer                                                               
+                6        101       1001                                         
+                                                                                
+       1222                                                                     
+Entry-level Consultant                                                          
+                8        102       1002                                         
+
+OPENING_NUM                                                                     
+-----------                                                                     
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE  COMP_CODE  QUAL_CODE                                         
+----------------- ---------- ----------                                         
+                                                                                
+       1223                                                                     
+Front-end Developer                                                             
+                3        103       1003                                         
+                                                                                
+       1224                                                                     
+Project Manager                                                                 
+
+OPENING_NUM                                                                     
+-----------                                                                     
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE  COMP_CODE  QUAL_CODE                                         
+----------------- ---------- ----------                                         
+                2        104       1004                                         
+                                                                                
+       1225                                                                     
+Data Analyst                                                                    
+                3        105       1005                                         
+                                                                                
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM PLACEMENT;
+
+PLACEMENT_NUM PLACEMENT PLACEMENT_TOTALHOURS OPENING_NUM   CAND_NUM             
+------------- --------- -------------------- ----------- ----------             
+            1 12-DEC-20                   12        1221          1             
+            2 03-DEC-20                   10        1222          2             
+            3 22-DEC-20                    9        1223          3             
+            4 21-DEC-20                   23        1224          4             
+            5 18-DEC-20                    6        1225          5             
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM EDUCATION;
+
+  CAND_NUM  QUAL_CODE EDUC_DATE                                                 
+---------- ---------- ---------                                                 
+         1       1001 20-MAY-20                                                 
+         2       1002 26-DEC-20                                                 
+         3       1003 05-MAY-20                                                 
+         4       1004 09-MAY-18                                                 
+         5       1005 20-MAY-20                                                 
+
+5 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM JOBHISTORY;
+
+     JH_ID   CAND_NUM                                                           
+---------- ----------                                                           
+      1301          1                                                           
+      1302          2                                                           
+      1309          3                                                           
+      1310          4                                                           
+      1311          5                                                           
+
+5 rows selected.
+
+SQL> 
+SQL> /*PROBLEM C*/
+
+     JH_ID   CAND_NUM                                                           
+---------- ----------                                                           
+      1301          1                                                           
+      1302          2                                                           
+      1309          3                                                           
+      1310          4                                                           
+      1311          5                                                           
+
+5 rows selected.
+
+SQL> 
+SQL> DELETE FROM JOBHISTORY
+  2  WHERE CAND_NUM > 3;
+
+2 rows deleted.
+
+SQL> 
+SQL> DELETE FROM EDUCATION
+  2  WHERE QUAL_CODE > 1003;
+
+2 rows deleted.
+
+SQL> 
+SQL> DELETE FROM PLACEMENT
+  2  WHERE PLACEMENT_NUM > 03;
+
+2 rows deleted.
+
+SQL> 
+SQL> DELETE FROM OPENING
+  2  WHERE OPENING_NUM > 1223;
+
+2 rows deleted.
+
+SQL> 
+SQL> DELETE FROM ENROLL
+  2  WHERE SESSION_NUM = 1238;
+
+1 row deleted.
+
+SQL> 
+SQL> DELETE FROM ENROLL
+  2  WHERE CAND_NUM = 4;
+
+1 row deleted.
+
+SQL> 
+SQL> DELETE FROM PREREQUISITE
+  2  WHERE COURSE_NUM > 10030;
+
+2 rows deleted.
+
+SQL> 
+SQL> DELETE FROM SESSIONS
+  2  WHERE SESSION_NUM = 1237;
+
+1 row deleted.
+
+SQL> 
+SQL> DELETE FROM SESSIONS
+  2  WHERE SESSION_FEE = 1500;
+
+1 row deleted.
+
+SQL> 
+SQL> DELETE FROM CANDIDATE
+  2  WHERE CAND_NUM > 3;
+
+2 rows deleted.
+
+SQL> 
+SQL> DELETE FROM COMPANY
+  2  WHERE COMP_CODE > 103;
+
+2 rows deleted.
+
+SQL> 
+SQL> DELETE FROM COURSE
+  2  WHERE COURSE_NUM = 10040;
+
+1 row deleted.
+
+SQL> 
+SQL> DELETE FROM COURSE
+  2  WHERE COURSE_NUM = 10050;
+
+1 row deleted.
+
+SQL> 
+SQL> DELETE FROM QUALIFICATION
+  2  WHERE QUAL_CODE = 1004;
+
+1 row deleted.
+
+SQL> 
+SQL> DELETE FROM QUALIFICATION
+  2  WHERE QUAL_CODE = 1005;
+
+1 row deleted.
+
+SQL> 
+SQL> SELECT *
+  2  FROM CANDIDATE;
+
+  CAND_NUM CAND_LNAME                                                           
+---------- --------------------                                                 
+         1 Swift                                                                
+         2 Sheldon                                                              
+         3 Cooper                                                               
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM QUALIFICATION;
+
+ QUAL_CODE QUAL_DESCRIPTION                                                     
+---------- --------------------------------------------------                   
+      1001 ACCOUNTING                                                           
+      1002 FINANCE                                                              
+      1003 CALCULUS                                                             
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM COMPANY;
+
+ COMP_CODE COMP_NAME                                                            
+---------- --------------------------------------------------                   
+       101 EY                                                                   
+       102 PwC                                                                  
+       103 Google                                                               
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM COURSE;
+
+COURSE_NUM COURSE_DESCRIPTION                                 COURSE_FEE        
+---------- -------------------------------------------------- ----------        
+ QUAL_CODE                                                                      
+----------                                                                      
+     10010 ACCOUNTING                                                300        
+      1001                                                                      
+                                                                                
+     10020 BUSINESS FINANCE                                          300        
+      1002                                                                      
+                                                                                
+     10030 CALCULUS                                                  300        
+      1003                                                                      
+                                                                                
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM SESSIONS;
+
+SESSION_NUM SESSION_S SESSION_FEE COURSE_NUM                                    
+----------- --------- ----------- ----------                                    
+       1234 18-JAN-21        2354      10010                                    
+       1235 19-JAN-21        2354      10020                                    
+       1236 18-JAN-21        2354      10030                                    
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM ENROLL;
+
+SESSION_NUM   CAND_NUM ENROLL_DA ENROLL_FEEPAID                                 
+----------- ---------- --------- --------------                                 
+       1234          1 15-AUG-20            500                                 
+       1235          2 15-AUG-20            500                                 
+       1236          3 03-JAN-21            500                                 
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM PREREQUISITE;
+
+COURSE_NUM  QUAL_CODE                                                           
+---------- ----------                                                           
+     10010                                                                      
+     10020       1001                                                           
+     10030                                                                      
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM OPENING;
+
+OPENING_NUM                                                                     
+-----------                                                                     
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE  COMP_CODE  QUAL_CODE                                         
+----------------- ---------- ----------                                         
+       1221                                                                     
+Software Engineer                                                               
+                6        101       1001                                         
+                                                                                
+       1222                                                                     
+Entry-level Consultant                                                          
+                8        102       1002                                         
+
+OPENING_NUM                                                                     
+-----------                                                                     
+OPENING_DESCRIPTION                                                             
+--------------------------------------------------------------------------------
+OPENING_AVAILABLE  COMP_CODE  QUAL_CODE                                         
+----------------- ---------- ----------                                         
+                                                                                
+       1223                                                                     
+Front-end Developer                                                             
+                3        103       1003                                         
+                                                                                
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM PLACEMENT;
+
+PLACEMENT_NUM PLACEMENT PLACEMENT_TOTALHOURS OPENING_NUM   CAND_NUM             
+------------- --------- -------------------- ----------- ----------             
+            1 12-DEC-20                   12        1221          1             
+            2 03-DEC-20                   10        1222          2             
+            3 22-DEC-20                    9        1223          3             
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM EDUCATION;
+
+  CAND_NUM  QUAL_CODE EDUC_DATE                                                 
+---------- ---------- ---------                                                 
+         1       1001 20-MAY-20                                                 
+         2       1002 26-DEC-20                                                 
+         3       1003 05-MAY-20                                                 
+
+3 rows selected.
+
+SQL> 
+SQL> SELECT *
+  2  FROM JOBHISTORY;
+
+     JH_ID   CAND_NUM                                                           
+---------- ----------                                                           
+      1301          1                                                           
+      1302          2                                                           
+      1309          3                                                           
+
+3 rows selected.
+
+SQL> SPOOL OFF
